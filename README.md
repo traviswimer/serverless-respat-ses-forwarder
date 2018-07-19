@@ -67,8 +67,13 @@ Make sure you have verified your email address and domains for SES using the AWS
 
 ## Config options
 **pattern_name** - (string) A pattern name included in resource names. *DEFAULT: "SesForwarder"*
+
 **bucket_path** - (string) Path to bucket. *DEFAULT:  '/'*
+
 **bucket_name** - (string) The S3 bucket name used to store your emails.
+
 **ses_ruleset_name** - (string) The active SES ruleset where the receipt rules will be added. The ruleset must already exist.
+
 **email_recipients** - (string) The email address where you would like the emails to be forwarded.
+
 **lambda_function_name** - (string) The name of the lambda function that does the forwarding.
