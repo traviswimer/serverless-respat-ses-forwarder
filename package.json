@@ -1,0 +1,11 @@
+{
+  "name": "serverless-respat-ses-forwarder",
+  "version": "1.0.0",
+  "description": "Resource pattern to setup email forwarding through SES",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Travis Wimer",
+  "license": "MIT"
+}
