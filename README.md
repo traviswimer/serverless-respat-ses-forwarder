@@ -17,7 +17,7 @@ Add patterns to the "custom" object in your serverless config file:
 		prefix: "${self:service}-${opt:stage}",
 		patterns: [
 			{
-				pattern_function: require("serverless-respat-ses-forwarder"),
+				pattern: require("serverless-respat-ses-forwarder"),
 				config: {
 					ses_ruleset_name: "EmailForwarding",
 					bucket_name: "el-bucket-de-email",
@@ -66,14 +66,14 @@ module.exports = {
 Make sure you have verified your email address and domains for SES using the AWS console.
 
 ## Config options
-**pattern_name** - (string) A pattern name included in resource names. *DEFAULT: "SesForwarder"*
+**pattern_name** - (string, _default: "SesForwarder"_) A pattern name included in resource names.
 
-**bucket_path** - (string) Path to bucket. *DEFAULT:  '/'*
+**bucket_path** - (string, _default: '/'_) Path to bucket.
 
-**bucket_name** - (string) The S3 bucket name used to store your emails.
+**bucket_name** - (string, REQUIRED) The S3 bucket name used to store your emails.
 
-**ses_ruleset_name** - (string) The active SES ruleset where the receipt rules will be added. The ruleset must already exist.
+**ses_ruleset_name** - (string, REQUIRED) The active SES ruleset where the receipt rules will be added. The ruleset must already exist.
 
-**email_recipients** - (string) The email address where you would like the emails to be forwarded.
+**email_recipients** - (string, REQUIRED) The email address where you would like the emails to be forwarded.
 
-**lambda_function_name** - (string) The name of the lambda function that does the forwarding.
+**lambda_function_name** - (string, REQUIRED) The name of the lambda function that does the forwarding.
