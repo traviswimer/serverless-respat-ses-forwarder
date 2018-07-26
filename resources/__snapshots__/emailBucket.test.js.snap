@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`emailBucket() generates bucket 1`] = `
+Object {
+  "Properties": Object {
+    "AccessControl": "Private",
+    "BucketName": "TheBucketName",
+  },
+  "Type": "AWS::S3::Bucket",
+}
+`;

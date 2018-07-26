@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bucketPolicy() generates policy 1`] = `
+Object {
+  "DependsOn": Array [
+    "ThePatternNameEmailBucket",
+  ],
+  "Properties": Object {
+    "Bucket": Object {
+      "Fn::Join": Array [
+        "",
+        Array [
+          Object {
+            "Ref": "ThePatternNameEmailBucket",
+          },
+        ],
+      ],
+    },
+    "PolicyDocument": Object {
+      "Statement": Array [
+        Object {
+          "Action": "s3:PutObject",
+          "Condition": Object {
+            "StringEquals": Object {
+              "aws:Referer": Object {
+                "Ref": "AWS::AccountId",
+              },
+            },
+          },
+          "Effect": "Allow",
+          "Principal": Object {
+            "Service": "ses.amazonaws.com",
+          },
+          "Resource": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:aws:s3:::",
+                Object {
+                  "Ref": "ThePatternNameEmailBucket",
+                },
+                "/*",
+              ],
+            ],
+          },
+          "Sid": "ThePrefix-ThePatternName-allow-ses-to-write",
+        },
+      ],
+      "Version": "2012-10-17",
+    },
+  },
+  "Type": "AWS::S3::BucketPolicy",
+}
+`;

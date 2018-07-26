@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lambdaSesPermission() generates permission 1`] = `
+Object {
+  "Properties": Object {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": Object {
+      "Fn::GetAtt": Array [
+        "TheLambdaNameLambdaFunction",
+        "Arn",
+      ],
+    },
+    "Principal": "ses.amazonaws.com",
+  },
+  "Type": "AWS::Lambda::Permission",
+}
+`;

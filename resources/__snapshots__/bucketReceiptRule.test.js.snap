@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bucketReceiptRule() generates policy 1`] = `
+Object {
+  "DependsOn": Array [
+    "ThePatternNameEmailBucket",
+  ],
+  "Properties": Object {
+    "Rule": Object {
+      "Actions": Array [
+        Object {
+          "S3Action": Object {
+            "BucketName": "TheBucketName",
+          },
+        },
+      ],
+      "Enabled": true,
+      "Name": "ThePrefix-ThePatternName-s3-email-store",
+      "Recipients": Array [
+        "some_email@domain",
+      ],
+      "ScanEnabled": true,
+    },
+    "RuleSetName": "TheRulesetName",
+  },
+  "Type": "AWS::SES::ReceiptRule",
+}
+`;
+
+exports[`bucketReceiptRule() generates receipt rule 1`] = `
+Object {
+  "DependsOn": Array [
+    "ThePatternNameEmailBucket",
+  ],
+  "Properties": Object {
+    "Rule": Object {
+      "Actions": Array [
+        Object {
+          "S3Action": Object {
+            "BucketName": "TheBucketName",
+          },
+        },
+      ],
+      "Enabled": true,
+      "Name": "ThePrefix-ThePatternName-s3-email-store",
+      "Recipients": Array [
+        "some_email@domain",
+      ],
+      "ScanEnabled": true,
+    },
+    "RuleSetName": "TheRulesetName",
+  },
+  "Type": "AWS::SES::ReceiptRule",
+}
+`;

@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lambdaForwardRole() generates role 1`] = `
+Object {
+  "Properties": Object {
+    "AssumeRolePolicyDocument": Object {
+      "Statement": Array [
+        Object {
+          "Action": "sts:AssumeRole",
+          "Effect": "Allow",
+          "Principal": Object {
+            "Service": "lambda.amazonaws.com",
+          },
+        },
+      ],
+      "Version": "2012-10-17",
+    },
+    "MaxSessionDuration": 3600,
+    "Path": "TheBucketPath",
+    "Policies": Array [
+      Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+              ],
+              "Effect": "Allow",
+              "Resource": "arn:aws:logs:*:*:*",
+            },
+            Object {
+              "Action": "ses:SendRawEmail",
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+            Object {
+              "Action": Array [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:*",
+              ],
+              "Effect": "Allow",
+              "Resource": "arn:aws:s3:::TheBucketName/*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "ThePrefix-ThePatternName-role-policy",
+      },
+    ],
+    "RoleName": "ThePrefix-ThePatternName-role",
+  },
+  "Type": "AWS::IAM::Role",
+}
+`;

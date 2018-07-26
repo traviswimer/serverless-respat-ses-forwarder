@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lambdaReceiptRule() generates role 1`] = `
+Object {
+  "DependsOn": Array [
+    "ThePatternNameEmailBucket",
+    "ThePatternNameEmailBucketPolicy",
+    "ThePatternNameBucketReceiptRule",
+  ],
+  "Properties": Object {
+    "After": "ThePrefix-ThePatternName-s3-email-store",
+    "Rule": Object {
+      "Actions": Array [
+        Object {
+          "LambdaAction": Object {
+            "FunctionArn": Object {
+              "Fn::GetAtt": Array [
+                "TheLambdaNameLambdaFunction",
+                "Arn",
+              ],
+            },
+            "InvocationType": "Event",
+          },
+        },
+      ],
+      "Enabled": true,
+      "Name": "ThePrefix-ThePatternName-email-lambda-rule",
+      "Recipients": Array [
+        "email@domain",
+      ],
+      "ScanEnabled": true,
+    },
+    "RuleSetName": "TheRulesetName",
+  },
+  "Type": "AWS::SES::ReceiptRule",
+}
+`;
